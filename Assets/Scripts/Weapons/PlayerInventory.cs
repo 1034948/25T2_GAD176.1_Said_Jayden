@@ -13,7 +13,11 @@ using UnityEngine;
 
         public void CollectPotion()
         {
-            amountOfPotions = +1;
+            amountOfPotions =+ 1;
         }
 
+        public void CollectAmmo()
+        {
+            ammo = +1;
+        }
     }
