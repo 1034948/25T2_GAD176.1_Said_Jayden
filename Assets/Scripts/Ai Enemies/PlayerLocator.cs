@@ -20,7 +20,7 @@ public class PlayerLocator : MonoBehaviour
             //AI chasing movement
             //We need a target
             //We want to move towards the target
-            if (sphere.velocity.magnitude < 2.5)
+            if (sphere.velocity.magnitude < 112.5)
             {
                 //Need to know the DIRECTION from ME (the AI) to the TARGET (the PLAYER)
                 //The Vector maths is

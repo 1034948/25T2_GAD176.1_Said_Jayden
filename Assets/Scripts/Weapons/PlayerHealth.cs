@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] GameObject Player;
+    
+    public int playerHealth = 100;
+
+    public void PlayerDamaged()
     {
-        
+        playerHealth -= 5;
     }
 
-    // Update is called once per frame
+    public void PlayerRangedDamaged()
+    {
+        playerHealth -= 10;
+    }
+
     void Update()
     {
-        
+        if (playerHealth == 0)
+        {
+            Debug.Log("Game Over");
+            Destroy(Player);
+        }
     }
 }
