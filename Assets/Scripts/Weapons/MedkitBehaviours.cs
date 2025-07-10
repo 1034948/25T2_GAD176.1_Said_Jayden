@@ -14,7 +14,7 @@ namespace FPSGame
             {
                 Debug.Log("Potion accquired");
                 Destroy(gameObject);
-                other.GetComponent<PlayerInventory>().CollectPotion();
+                inventory.GetComponent<PlayerInventory>().CollectPotion();
             }
         }
     }

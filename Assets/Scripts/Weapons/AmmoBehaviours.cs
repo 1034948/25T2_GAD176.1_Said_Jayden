@@ -14,7 +14,7 @@ namespace FPSGame
             {
                 Debug.Log("Ammo accquired");
                 Destroy(gameObject);
-                other.GetComponent<PlayerInventory>().CollectAmmo();
+                inventory.GetComponent<PlayerInventory>().CollectAmmo();
             }
         }
     }

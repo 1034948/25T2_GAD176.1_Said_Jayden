@@ -8,20 +8,20 @@ namespace FPSGame
     {
 
         //Stat for amount of Ammo players will have
-        public int ammo = 0;
+        public int ammo = 50;
         //Stat for medkit shows amount of potions you have
         public int amountOfPotions = 0;
 
         public void CollectPotion()
         {
-            amountOfPotions =+ 1;
+            amountOfPotions += 1;
 
             Debug.Log("POTION!");
         }
 
         public void CollectAmmo()
         {
-            ammo =+ 50;
+            ammo += 50;
 
             Debug.Log("AMMO!");
         }

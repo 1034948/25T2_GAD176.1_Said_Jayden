@@ -130,7 +130,7 @@ namespace FPSGame
                 if (GunOut == true)
                 {
                     Debug.Log("pew pew");
-                    //GetComponent<PhysicsCasting>().RayCast();
+                    Capsule.GetComponent<PhysicsCasting>().RayCast();
                 }
                 else if (PotionOut == true)
                 {
@@ -144,6 +144,7 @@ namespace FPSGame
             }
 
         }
+
     }
 
 }

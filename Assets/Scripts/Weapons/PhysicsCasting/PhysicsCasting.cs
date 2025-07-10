@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class PhysicsCasting : MonoBehaviour
 {
-    public float raycastDistance = 10;
+    [SerializeField] Enemy Enemy;
+    [SerializeField] EnemyFlying FlyingEnemy;
+
+
+    public float raycastDistance = 50;
 
     void Update()
     {
-        RayCast();
+        //RayCast();
     }
 
     public void RayCast()
@@ -19,8 +23,20 @@ public class PhysicsCasting : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, raycastDistance))
         {
-            if (hit.transform.GetComponent<Enemy>())
             Debug.Log("You hit something");
+
+
+            if (hit.transform.GetComponent<Enemy>())
+            {
+                Debug.Log("You hit an enemy");
+                Enemy.GetComponent<Enemy>().EnemyHit();
+            }
+
+            if (hit.transform.GetComponent<EnemyFlying>())
+            {
+                Debug.Log("You hit a drone");
+                FlyingEnemy.GetComponent<EnemyFlying>().FlyingEnemyHit();
+            }
         }
     }
 }
