@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MedkitBehaviours : MonoBehaviour
+namespace FPSGame
 {
-    [SerializeField] PlayerInventory inventory;
-
-    private void OnTriggerEnter(Collider other)
+    public class MedkitBehaviours : MonoBehaviour
     {
-        if (other.CompareTag("Player") == true)
+        [SerializeField] PlayerInventory inventory;
+
+        public void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Potion accquired");
-            Destroy(gameObject);
-            //other.GetComponent<PlayerInventory> CollectPotion();
+            if (other.CompareTag("Player") == true)
+            {
+                Debug.Log("Potion accquired");
+                Destroy(gameObject);
+                other.GetComponent<PlayerInventory>().CollectPotion();
+            }
         }
     }
 }

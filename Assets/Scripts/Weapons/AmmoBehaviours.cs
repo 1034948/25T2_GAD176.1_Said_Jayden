@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmmoBehaviours : MonoBehaviour
+namespace FPSGame
 {
-    [SerializeField] PlayerInventory inventory;
-
-    private void OnTriggerEnter(Collider other)
+    public class AmmoBehaviours : MonoBehaviour
     {
-        if (other.CompareTag("Player") == true)
+        [SerializeField] PlayerInventory inventory;
+
+        public void OnTriggerEnter(Collider other)
         {
-            Debug.Log("Ammo accquired");
-            Destroy(gameObject);
-            //other.GetComponent<PlayerInventory> ColletAmmo();
+            if (other.CompareTag("Player") == true)
+            {
+                Debug.Log("Ammo accquired");
+                Destroy(gameObject);
+                other.GetComponent<PlayerInventory>().CollectAmmo();
+            }
         }
     }
 }

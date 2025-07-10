@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-    public class PlayerInventory : MonoBehaviour
+namespace FPSGame
+{
+    public class PlayerInventory : MonoBehaviour, ICollectPotions
     {
 
         //Stat for amount of Ammo players will have
@@ -14,10 +15,20 @@ using UnityEngine;
         public void CollectPotion()
         {
             amountOfPotions =+ 1;
+
+            Debug.Log("POTION!");
         }
 
         public void CollectAmmo()
         {
-            ammo = +1;
+            ammo =+ 50;
+
+            Debug.Log("AMMO!");
+        }
+
+        public void ShootGun()
+        {
+
         }
     }
+}
