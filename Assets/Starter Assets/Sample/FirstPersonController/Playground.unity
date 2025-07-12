@@ -1370,6 +1370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9fc011d10546ab44bdaa2c4b65c67fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Capsule: {fileID: 8338988565591873056}
   ammo: 0
   amountOfPotions: 0
 --- !u!1 &815512982
@@ -3398,7 +3399,7 @@ PrefabInstance:
         type: 3}
       propertyPath: Capsule
       value: 
-      objectReference: {fileID: 8338988565591873056}
+      objectReference: {fileID: 346960165}
     - target: {fileID: 1602995521556601275, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
         type: 3}
       propertyPath: inventory

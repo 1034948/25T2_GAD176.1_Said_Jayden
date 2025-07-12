@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    
+    [SerializeField] GameObject BladeHitBox;
+
+
     public int enemyHealth = 100;
 
     // Update is called once per frame
@@ -19,5 +21,12 @@ public class Enemy : MonoBehaviour
     public void EnemyHit()
     {
         enemyHealth -= 10;
+    }
+
+    public void EnemyMeleeHit()
+    {
+        enemyHealth -= 20;
+        BladeHitBox.SetActive(false);
+        Debug.Log("EnemyHit");
     }
 }

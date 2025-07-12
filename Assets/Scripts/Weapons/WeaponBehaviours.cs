@@ -7,7 +7,9 @@ namespace FPSGame
     public class WeaponBehaviours : MonoBehaviour
     {
         [SerializeField] PlayerInventory inventory;
-        [SerializeField] PhysicsCasting Capsule;
+        [SerializeField] PlayerHealth Capsule;
+        [SerializeField] GameObject BladeHitBox;
+        [SerializeField] Enemy Enemy;
 
         //Weapon Game Objects
 
@@ -28,6 +30,7 @@ namespace FPSGame
         [SerializeField] private bool GunOut = false;
         [SerializeField] private bool PotionOut = false;
 
+
         void Start()
         {
             Gun.SetActive(true);
@@ -39,6 +42,8 @@ namespace FPSGame
             BladeSelection.SetActive(false);
             KnifeSelection.SetActive(false);
             PotionSeletion.SetActive(false);
+
+            BladeHitBox.SetActive(false);
 
             GunOut = true;
             PotionOut = false;
@@ -129,17 +134,17 @@ namespace FPSGame
             {
                 if (GunOut == true)
                 {
-                    Debug.Log("pew pew");
-                    Capsule.GetComponent<PhysicsCasting>().RayCast();
+                    inventory.GetComponent<PlayerInventory>().ShootGun();
                 }
                 else if (PotionOut == true)
                 {
-                    Debug.Log("Glug glug glug");
+                    inventory.GetComponent<PlayerInventory>().UsePotion();
                 }
                 else
                 {
                     Debug.Log("Slash");
-                    
+                    BladeHitBox.SetActive(true);
+                    Enemy.GetComponent<Enemy>().EnemyMeleeHit();
                 }
             }
 

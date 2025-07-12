@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    //[SerializeField] PlayerInventory Inventory;
     [SerializeField] GameObject Player;
-    
+
     public int playerHealth = 100;
 
     public void PlayerDamaged()
@@ -16,6 +17,14 @@ public class PlayerHealth : MonoBehaviour
     public void PlayerRangedDamaged()
     {
         playerHealth -= 10;
+    }
+
+    public void RegenHealth()
+    {
+        if (playerHealth <= 100)
+        {
+            playerHealth += 10;
+        }
     }
 
     void Update()
